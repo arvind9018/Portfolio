@@ -157,3 +157,21 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.getElementById("downloadBtn").addEventListener("click", function() {
+  const pdfUrl = "your-file.pdf"; // Replace with actual PDF file path
+  const link = document.createElement("a");
+  link.href = pdfUrl;
+  link.download = "Arvindresume2.pdf"; // Name of the downloaded file
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+
+document.getElementById("downloadBtn").addEventListener("mouseover", function() {
+  this.style.backgroundColor = "#555";
+});
+
+document.getElementById("downloadBtn").addEventListener("mouseout", function() {
+  this.style.backgroundColor = "#333";
+});
