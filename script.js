@@ -159,10 +159,10 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 document.getElementById("downloadBtn").addEventListener("click", function() {
-  const pdfUrl = "your-file.pdf"; // Replace with actual PDF file path
+  const pdfUrl = "Arvindresume2.pdf"; // Replace with actual PDF file path
   const link = document.createElement("a");
   link.href = pdfUrl;
-  link.download = "Arvindresume2.pdf"; // Name of the downloaded file
+  link.download = "Resume.pdf"; // Name of the downloaded file
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
