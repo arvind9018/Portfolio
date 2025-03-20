@@ -1,5 +1,4 @@
 :root {
-
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(60, 81%, 49%) 3%, 
@@ -31,8 +30,6 @@
     hsl(35, 100%, 68%)
   );
 
-  
-
   --jet: hsl(0, 10%, 86%);
   --onyx: hsl(240, 2%, 39%);
   --eerie-black-1: hsl(240, 3%, 19%);
@@ -46,11 +43,8 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 19%, 91%);
 
- 
- 
   --ff-poppins: 'Poppins', sans-serif;
 
-  
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -60,69 +54,20 @@
   --fs-7: 13px;
   --fs-8: 11px;
 
-  
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
 
-  
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
- 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
-
-} 
-
-
-
-/*
-
-header  
-
-*/
-
-
-/* Default Navigation Styles */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #090808;
-  padding: 15px 20px;
 }
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li {
-  display: inline-block;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-/* Hide the menu by default on mobile */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-
-
 
 /*-----------------------------------*\
   #RESET
@@ -143,23 +88,20 @@ img, ion-icon, a, button, time, span { display: block; }
 button {
   font: inherit;
   background: none;
-  border:white;
+  border: none;
   text-align: center;
   cursor: pointer;
   color: white;
-  border: none;
   padding: 12px 24px;
   font-size: 16px;
-  cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease; 
 }
+
 button:hover {
-  
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
   transform: translateY(-5px);
-  
 }
 
 input, textarea {
@@ -179,10 +121,6 @@ input, textarea {
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
-
-
-
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -293,7 +231,7 @@ article.active {
   border-radius: 5px;
 }
 
-.has-scrollbar::-webkit-scrollbar-button { width: 20px; }  */
+.has-scrollbar::-webkit-scrollbar-button { width: 20px; }
 
 .content-card {
   position: relative;
@@ -315,10 +253,6 @@ article.active {
   z-index: -1;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -328,47 +262,6 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
-/*
-All - button
-*/
-
-
-.all-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  border-radius: 0 15px;
-  font-size: 13px;
-  color: var(--orange-yellow-crayola);
-  background: var(--border-gradient-onyx);
-  padding: 10px;
-  box-shadow: var(--shadow-2);
-  transition: var(--transition-1);
-  z-index: 1;
-}
-
-.all-btn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: var(--bg-gradient-jet);
-  transition: var(--transition-1);
-  z-index: -1;
-}
-
-.all-btn:hover,
-.all-btn:focus { background: var(--bg-gradient-yellow-1); }
-
-.all-btn:hover::before,
-.all-btn:focus::before { background: var(--bg-gradient-yellow-2); }
-
-.all-btn span { display: none; }
-
-
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -505,10 +398,6 @@ All - button
 
 .social-item .social-link:hover { color: var(--light-gray); }
 
-
-
-
-
 /*-----------------------------------*\
   #NAVBAR
 \*-----------------------------------*/
@@ -546,10 +435,6 @@ All - button
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
-
-
-
-
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
@@ -565,11 +450,9 @@ All - button
 
 .about-text p { margin-bottom: 15px; }
 
-
-
-/**
- * #service 
- */
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
 
 .service { margin-bottom: 35px; }
 
@@ -614,8 +497,9 @@ All - button
   line-height: 1.6;
 }
 
-
-
+/*-----------------------------------*\
+  #MODAL
+\*-----------------------------------*/
 
 .modal-container {
   position: fixed;
@@ -726,17 +610,11 @@ All - button
   line-height: 1.6;
 }
 
-
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
 
 .article-title { margin-bottom: 30px; }
-
-
-/**
- * education and experience 
- */
 
 .timeline { margin-bottom: 30px; }
 
@@ -796,15 +674,13 @@ All - button
   line-height: 1.6;
 }
 
-
-/**
- * skills 
- */
+/*-----------------------------------*\
+  #SKILLS
+\*-----------------------------------*/
 
 .skills-title { margin-bottom: 20px; }
 
 .skills-list { padding: 20px; }
-
 
 .skills-item:not(:last-child) { margin-bottom: 15px; }
 
@@ -834,12 +710,10 @@ All - button
   border-radius: inherit;
 }
 
-
-
 .skill-button {
   display: flex;
-  justify-content: center; /* Center button horizontally */
-  align-items: center; /* Center button vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -856,10 +730,6 @@ button {
 button:hover {
   background-color: #555;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -1016,10 +886,6 @@ button:hover {
   font-weight: var(--fw-300);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
@@ -1103,10 +969,6 @@ button:hover {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #CONTACT
@@ -1196,7 +1058,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   transition: var(--transition-1);
 }
 
-
 .form-btn ion-icon { font-size: 16px; }
 
 .form-btn:hover { background: var(--bg-gradient-yellow-1); }
@@ -1212,57 +1073,18 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
-
-
-
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
 
-/**
- * responsive larger than 450px screen
- */
-
 @media (min-width: 450px) {
-
-  /**
-   * client
-   */
-
   .clients-item { min-width: calc(33.33% - 8px); }
-
-
-
-  /**
-   * #PORTFOLIO, BLOG 
-   */
-
   .project-img,
   .blog-banner-box { height: auto; }
-
 }
 
-
-
-
-
-/**
- * responsive larger than 580px screen
- */
-
 @media (min-width: 580px) {
-
-  /**
-   * CUSTOM PROPERTY
-   */
-
   :root {
-
-    /**
-     * typography
-     */
-
     --fs-1: 32px;
     --fs-2: 24px;
     --fs-3: 26px;
@@ -1270,14 +1092,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     --fs-6: 15px;
     --fs-7: 15px;
     --fs-8: 12px;
-
   }
-
-
-
-  /**
-   * #REUSED STYLE
-   */
 
   .sidebar, article {
     width: 520px;
@@ -1302,25 +1117,13 @@ textarea.form-input::-webkit-resizer { display: none; }
     font-size: 18px;
   }
 
-
-
-  /**
-   * #MAIN
-   */
-
   main {
     margin-top: 60px;
     margin-bottom: 100px;
   }
 
-
-
-  /**
-   * #SIDEBAR
-   */
-
   .sidebar {
-    max-height: 180px;
+    max-height: 280px;
     margin-bottom: 30px;
   }
 
@@ -1358,29 +1161,15 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: calc(100% - 64px);
   }
 
-
-
-  /**
-   * #NAVBAR
-   */
-
   .navbar { border-radius: 20px 20px 0 0; }
 
   .navbar-list { gap: 20px; }
 
   .navbar-link { --fs-8: 14px; }
 
-
-
-  /**
-   * #ABOUT
-   */
-
   .about .article-title { margin-bottom: 20px; }
 
   .about-text { margin-bottom: 40px; }
-
-  /* service */
 
   .service-item {
     display: flex;
@@ -1396,8 +1185,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .service-content-box { text-align: left; }
-
-  /* testimonials */
 
   .testimonials-title { margin-bottom: 25px; }
 
@@ -1430,8 +1217,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     -webkit-line-clamp: 2;
   }
 
-  /* testimonials modal */
-
   .modal-container { padding: 20px; }
 
   .testimonials-modal {
@@ -1462,8 +1247,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 35px;
   }
 
-  /* clients */
-
   .clients-list {
     gap: 50px;
     margin: 0 -30px;
@@ -1472,12 +1255,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .clients-item { min-width: calc(33.33% - 35px); }
-
-
-
-  /**
-   * #RESUME
-   */
 
   .timeline-list { margin-left: 65px; }
 
@@ -1491,23 +1268,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
 
-
-
-  /**
-   * #PORTFOLIO, BLOG
-   */
-
   .project-img, .blog-banner-box { border-radius: 16px; }
 
   .blog-posts-list { gap: 30px; }
 
   .blog-content { padding: 25px; }
-
-
-
-  /**
-   * #CONTACT
-   */
 
   .mapbox {
     height: 380px;
@@ -1529,53 +1294,19 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .form-btn ion-icon { font-size: 18px; }
-
 }
 
-
-
-
-
-/**
- * responsive larger than 768px screen
- */
-
 @media (min-width: 768px) {
-
-  /**
-   * REUSED STYLE
-   */
-
   .sidebar, article { width: 700px; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
-
-
-
-  /**
-   * SIDEBAR
-   */
 
   .contacts-list {
     grid-template-columns: 1fr 1fr;
     gap: 30px 15px;
   }
 
-
-
-  /**
-   * NAVBAR
-   */
-
   .navbar-link { --fs-8: 15px; }
-
-
-
-  /**
-   * ABOUT
-   */
-
-  /* testimonials modal */
 
   .testimonials-modal {
     gap: 35px;
@@ -1583,14 +1314,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .modal-avatar-box img { width: 80px; }
-
-
-
-  /**
-   * PORTFOLIO
-   */
-
-  .article-title { padding-bottom: 20px; }
 
   .filter-select-box { display: none; }
 
@@ -1821,7 +1544,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar {
     position: sticky;
-    top: 60px;
+    top: auto;
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
