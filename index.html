@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arvind Kumar Personal Portfolio</title>
+  <title>vCard - Personal Portfolio</title>
 
   <!--
     - favicon
@@ -16,6 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style1.css">
 
   <!--
     - google font link
@@ -23,16 +24,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
+  
+<main>
     <!--
       - #SIDEBAR
     -->
@@ -56,6 +58,7 @@
 
           <ion-icon name="chevron-down"></ion-icon>
         </button>
+        
 
       </div>
 
@@ -136,6 +139,8 @@
           <li class="social-item">
             <a href="https://github.com/arvind9018" class="social-link">
               <ion-icon name="logo-github"></ion-icon>
+      
+              
             </a>
           </li>
 
@@ -164,13 +169,20 @@
       <!--
         - #NAVBAR
       -->
-
+      
       <nav class="navbar">
-
+        <!-- <button class="All-button" all-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button> -->
         <ul class="navbar-list">
+          
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>Home</button>
+          </li>
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link " data-nav-link>About</button>
           </li>
 
           <li class="navbar-item">
@@ -190,14 +202,46 @@
       </nav>
 
 
+      <!-- 
+      #Home
+        -->
 
-
+      <article class="home active" data-page="home">
+        
+        <header>
+          <h2 class="h2 article-title">Home</h2>
+        </header>
+        <section class="home-text">
+          
+          <div class="container" id="home">
+            <img src="arvind1.jpg" alt="Arvind Kumar's Photo" class="profile-img">
+            <h1>Arvind Kumar</h1>
+            <p class="role"></p>
+            <p class="passion">Passionate about web development, data science, and data analysis. I love building
+              innovative solutions and solving real-world problems.</p>
+            <a href ="project.html" class="work-btn" href ="project.html">See My Work</a>
+          </div>
+        </section>
+        <section class="tech-stack">
+          <h3 class="tech">Tech Stack</h3>
+  
+          <!-- Embedding the slideshow from slide.html -->
+          <iframe src="slide.html" width="100%" height="200px" frameborder="0"></iframe>
+  
+          <!-- View All button linking to full tech stack page -->
+          <div class="view-all-container">
+            <a  href="full-tech-stack.html"  class="work-btn">View All</a>
+          </div>
+          
+    
+      </section>
+      </article>
 
       <!--
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <article class="about" data-page="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -205,14 +249,19 @@
 
         <section class="about-text">
           <p>
-            I am a 3rd-year Computer Science Engineering (CSE) student specializing in Data Science, with a strong foundation in Data 
-            Structures & Algorithms, Machine Learning, and Full-Stack Development. With hands-on experience in Python, Java, C++, R, and 
-            SQL, I have worked on various projects, including a Library Management System (C++) and an Amazon Sales Dashboard (Tableau).
+            I am a 3rd-year Computer Science Engineering (CSE) student specializing in Data Science, with a strong
+            foundation in Data
+            Structures & Algorithms, Machine Learning, and Full-Stack Development. With hands-on experience in Python,
+            Java, C++, R, and
+            SQL, I have worked on various projects, including a Library Management System (C++) and an Amazon Sales
+            Dashboard (Tableau).
           </p>
 
           <p>
-            I am passionate about solving real-world problems through technology, analyzing data for meaningful insights, and building 
-            innovative solutions. I thrive in fast-paced environments and am always eager to learn and take on new challenges.
+            I am passionate about solving real-world problems through technology, analyzing data for meaningful
+            insights, and building
+            innovative solutions. I thrive in fast-paced environments and am always eager to learn and take on new
+            challenges.
           </p>
         </section>
 
@@ -238,7 +287,7 @@
                 <h4 class="h4 service-item-title">Data Analysis</h4>
 
                 <p class="service-item-text">
-                  Passionate about transforming raw data into meaningful insights 
+                  Passionate about transforming raw data into meaningful insights
                   using analytical tools like Python, Excel, and Tableau to drive data-driven decision-making.
                 </p>
               </div>
@@ -256,7 +305,7 @@
 
                 <p class="service-item-text">
                   Enthusiastic web developer skilled in building responsive and
-                   user-friendly websites using HTML, CSS, JavaScript, and modern frameworks.
+                  user-friendly websites using HTML, CSS, JavaScript, and modern frameworks.
                 </p>
               </div>
 
@@ -265,27 +314,28 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="icon-photo.svg" alt="mobile app icon" width="40">
+                <img src="icon-app.svg" alt="mobile app icon" width="40">
               </div>
 
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Video Editing</h4>
 
                 <p class="service-item-text">
-                  Creative video editor with a passion for crafting engaging and high-quality content, specializing in gaming, music.
+                  Creative video editor with a passion for crafting engaging and high-quality content, specializing in
+                  gaming, music.
                 </p>
               </div>
 
             </li>
 
-            
+
 
           </ul>
 
         </section>
 
 
-        
+
 
         <div class="modal-container" data-modal-container>
 
@@ -335,7 +385,7 @@
               <span>2022 — Present</span>
 
               <p class="timeline-text">
-                Bachelor of Technology - Computer Science Engineering<strong> - CGPA 7.15</strong> 
+                Bachelor of Technology - Computer Science Engineering<strong> - CGPA 7.15</strong>
               </p>
 
             </li>
@@ -347,7 +397,7 @@
               <span>2019 — 2020</span>
 
               <p class="timeline-text">
-              XII with Science:<strong> - Percentage - 83.5</strong>
+                XII with Science:<strong> - Percentage - 83.5</strong>
               </p>
 
             </li>
@@ -359,7 +409,7 @@
               <span>2017 - 2018</span>
 
               <p class="timeline-text">
-              X<strong> - Percentage - 78</strong>
+                X<strong> - Percentage - 78</strong>
               </p>
 
             </li>
@@ -387,8 +437,8 @@
               <span>Dec 2024</span>
 
               <p class="timeline-text">
-                Built a predictive sales dashboard using Tableau for visualization and Python (LSTM) 
-                for forecasting future sales trends. Utilized Amazon/Walmart sales data from Kaggle to 
+                Built a predictive sales dashboard using Tableau for visualization and Python (LSTM)
+                for forecasting future sales trends. Utilized Amazon/Walmart sales data from Kaggle to
                 analyze historical patterns and enhance data-driven decision-making.
               </p>
 
@@ -402,7 +452,8 @@
 
               <p class="timeline-text">
                 Developed a stock price prediction model using Python (Pandas, NumPy, LSTM) and Yahoo Finance data.
-                 Leveraged time series analysis and deep learning techniques to forecast future stock trends with improved accuracy.
+                Leveraged time series analysis and deep learning techniques to forecast future stock trends with
+                improved accuracy.
               </p>
 
             </li>
@@ -414,8 +465,9 @@
               <span>Oct 2024</span>
 
               <p class="timeline-text">
-                Designed an interactive sales dashboard using Tableau and Tableau Prep to analyze trends, track product 
-                performance, and monitor key metrics. Integrated visual insights, KPI tracking, and filter options to enhance 
+                Designed an interactive sales dashboard using Tableau and Tableau Prep to analyze trends, track product
+                performance, and monitor key metrics. Integrated visual insights, KPI tracking, and filter options to
+                enhance
                 data-driven decision-making and business performance.
               </p>
 
@@ -482,22 +534,24 @@
               </div>
 
             </li>
-      
+
           </ul>
 
+
+
         </section>
+
         <section class="resume">
-          <ul class = "skill-button Content">
-          <li class="Resume-button">
-            <div class="skill-button">
-            <button id="downloadBtn" >
-              Download My Resume 
-          </button>
-            </div>
-          </li>
+          <ul class="skill-button Content">
+            <li class="Resume-button">
+              <div class="skill-button">
+                <button id="downloadBtn">
+                  Download My Resume
+                </button>
+              </div>
+            </li>
           </ul>
         </section>
-
       </article>
 
 
@@ -783,25 +837,24 @@
       </article>
 
     </div>
-
+    
   </main>
-
-
-
-
-
-
   <!--
     - custom js link
   -->
   <script src="script.js"></script>
-
+  <script src="script1.js"></script>
   <!--
     - ionicon link
   -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
 
 </body>
+
+
 
 </html>
