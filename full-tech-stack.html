@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tech Stacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0d0d0d;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .tech-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #7f7fff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>All Tech Stacks</h2>
+        <div class="tech-grid">
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg
+                    " alt="Power BI"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg
+                    " alt="HTML"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C++"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg
+                    " alt="CSS"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg
+                    " alt="Oracle"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg
+                    " alt="My SQL"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg
+                    " alt="Pandas"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg
+                    " alt="NumPy"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg
+                    " alt="Java"></div>
+                <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png
+                    " alt="Java script"></div>
+        </div>
+        <button class="back-button" onclick="goBack()">Go Back</button>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

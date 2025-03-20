@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .go-back {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .go-back:hover {
+            background-color: #ffcc00;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            padding: 8px 12px;
+            color: #bbb;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #FFD700;
+            color: black;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .project-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #1e1e1e;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .project-card img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .filters select {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #FFD700;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .filters select:hover {
+            background: #444;
+        }
+
+        @media (max-width: 600px) {
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Go Back Button -->
+    
+
+    <section class="projects">
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('web-design')">Web Design</button>
+            <button class="filter-btn" onclick="filterProjects('applications')">Applications</button>
+            <button class="filter-btn" onclick="filterProjects('web-dev')">Web Development</button>
+            <button class="filter-btn" onclick="filterProjects('data-science')">Data Science</button>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card web-dev">
+                <img src="finance.png" alt="Finance">
+                <h3>Finance</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="project-card applications">
+                <img src="brawlhalla.png" alt="Brawlhalla">
+                <h3>Brawlhalla</h3>
+                <p>Applications</p>
+            </div>
+
+            <div class="project-card web-design">
+                <img src="dsm.png" alt="DSM">
+                <h3>DSM</h3>
+                <p>Web Design</p>
+            </div>
+
+            <div class="project-card web-dev">
+                <img src="summary.png" alt="Summary">
+                <h3>Summary</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="project-card applications">
+                <img src="task-manager.png" alt="Task Manager">
+                <h3>Task Manager</h3>
+                <p>Applications</p>
+            </div>
+
+            <div class="project-card web-dev">
+                <img src="arrival.png" alt="Arrival">
+                <h3>Arrival</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="project-card data-science">
+                <img src="ml-project.png" alt="ML Project">
+                <h3>Movie Rating Prediction</h3>
+                <p>Data Science</p>
+            </div>
+
+            <div class="project-card data-science">
+                <img src="tableau.png" alt="Tableau Dashboard">
+                <h3>Amazon Sales Dashboard</h3>
+                <p>Data Science</p>
+            </div>
+        </div>
+    </section>
+    <button class="go-back" onclick="goBack()">← Go Back</button>
+    <script>
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            projects.forEach(project => {
+                if (category === 'all' || project.classList.contains(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+
+        // Show all projects by default on page load
+        document.addEventListener("DOMContentLoaded", () => filterProjects('all'));
+
+        // Go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
