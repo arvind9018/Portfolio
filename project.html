@@ -12,6 +12,8 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
         }
 
         .go-back {
@@ -23,30 +25,23 @@
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-top: 20px;
             transition: 0.3s;
         }
 
         .go-back:hover {
             background-color: #ffcc00;
-            /* background: rgba(208, 225, 18, 0.1); */
-             box-shadow: 0 0 15px rgba(214, 224, 25, 0.7);
+            box-shadow: 0 0 15px rgba(214, 224, 25, 0.7);
             transform: translateY(-5px);
         }
 
-        .filter-select-box {
-            display: none;
-            background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-  transform: translateY(-5px);
-        }
-
+        /* Filter container */
         .filter-list {
             display: flex;
-            justify-content: flex-start;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            gap: 25px;
-            padding-left: 5px;
+            gap: 15px;
             margin-bottom: 30px;
         }
 
@@ -56,21 +51,44 @@
             background: none;
             border: none;
             cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
             transition: 0.3s;
         }
 
         .filter-item button:hover {
-        color: #888;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-        transform: translateY(-5px);
+            color: #888;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            transform: translateY(-5px);
         }
 
         .filter-item button.active {
             color: #FFD700;
-            
-            
+        }
 
+        /* Mobile view: Only show 'All' button first */
+        @media (max-width: 600px) {
+            .filter-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-list .filter-item:not(:first-child) {
+                display: none;
+            }
+
+            /* Expanded view when clicked */
+            .filter-list.expanded .filter-item {
+                display: block;
+            }
+
+            .filter-list.expanded {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
         }
 
         .project-grid {
@@ -100,8 +118,8 @@
 </head>
 <body>
 
-    <div class="filter-list">
-        <div class="filter-item"><button class="active" onclick="filterProjects('all')">All</button></div>
+    <div class="filter-list" id="filterList">
+        <div class="filter-item"><button class="active" onclick="toggleFilters(); filterProjects('all')">All</button></div>
         <div class="filter-item"><button onclick="filterProjects('web-design')">Web Design</button></div>
         <div class="filter-item"><button onclick="filterProjects('applications')">Applications</button></div>
         <div class="filter-item"><button onclick="filterProjects('web-dev')">Web Development</button></div>
@@ -169,6 +187,14 @@
 
         function goBack() {
             window.history.back();
+        }
+
+        // Toggle filter buttons in mobile view
+        function toggleFilters() {
+            const filterList = document.getElementById("filterList");
+            if (window.innerWidth <= 600) {
+                filterList.classList.toggle("expanded");
+            }
         }
     </script>
 
