@@ -27,12 +27,19 @@
             cursor: pointer;
             margin-top: 20px;
             transition: 0.3s;
+            
         }
 
         .go-back:hover {
             background-color: #ffcc00;
             box-shadow: 0 0 15px rgba(214, 224, 25, 0.7);
             transform: translateY(-5px);
+        }
+
+        .category-button{
+            padding: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
         }
 
         /* Desktop Filter List */
@@ -42,6 +49,7 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 20px;
+            
         }
 
         .filter-item button {
@@ -52,15 +60,20 @@
             cursor: pointer;
             padding: 10px;
             transition: 0.3s;
+            
         }
 
         .filter-item button:hover {
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
         }
 
         .filter-item button.active {
             color: #FFD700;
+            
         }
 
         /* Mobile View: Show "Select Category" button */
@@ -95,6 +108,7 @@
             padding: 10px;
             min-width: 200px;
             z-index: 10;
+            
         }
 
         .dropdown.show {
