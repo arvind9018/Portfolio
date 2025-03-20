@@ -1,11 +1,7 @@
 'use strict';
 
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -14,6 +10,10 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
+
+// const all = document.querySelector("[data-navbar]");
+// const allBtn = document.querySelector("[data-navbar-btn]");
+// allBtn.addEventListener("click", function () { elementToggleFunc(all); });
 
 
 // testimonials variables
@@ -33,27 +33,9 @@ const testimonialsModalFunc = function () {
   overlay.classList.toggle("active");
 }
 
-// add click event to all modal items
-// for (let i = 0; i < testimonialsItem.length; i++) {
-
-//   testimonialsItem[i].addEventListener("click", function () {
-
-//     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-//     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-//     modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-//     modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-//     testimonialsModalFunc();
-
-//   });
-
-// }
-
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
-
-
 
 // custom select variables
 const select = document.querySelector("[data-select]");
@@ -66,12 +48,10 @@ select.addEventListener("click", function () { elementToggleFunc(this); });
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
-
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
-
   });
 }
 
@@ -79,9 +59,7 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
-
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
@@ -89,18 +67,14 @@ const filterFunc = function (selectedValue) {
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
 }
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {
-
   filterBtn[i].addEventListener("click", function () {
-
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
@@ -108,12 +82,8 @@ for (let i = 0; i < filterBtn.length; i++) {
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
-
   });
-
 }
-
-
 
 // contact form variables
 const form = document.querySelector("[data-form]");
@@ -123,18 +93,14 @@ const formBtn = document.querySelector("[data-form-btn]");
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
-
     // check form validation
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
     } else {
       formBtn.setAttribute("disabled", "");
     }
-
   });
 }
-
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -143,7 +109,6 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
@@ -154,10 +119,10 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
-
   });
 }
 
+// Resume download button functionality
 document.getElementById("downloadBtn").addEventListener("click", function() {
   const pdfUrl = "Arvindresume2.pdf"; // Replace with actual PDF file path
   const link = document.createElement("a");
@@ -175,3 +140,115 @@ document.getElementById("downloadBtn").addEventListener("mouseover", function() 
 document.getElementById("downloadBtn").addEventListener("mouseout", function() {
   this.style.backgroundColor = "#333";
 });
+
+// Typing Animation
+const roles = ["Web Developer", "Data Scientist", "Data Analyst"];
+let roleIndex = 0;
+let charIndex = 0;
+const roleElement = document.querySelector('.role');
+
+function type() {
+  if (charIndex < roles[roleIndex].length) {
+    roleElement.textContent += roles[roleIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 100);
+  } else {
+    setTimeout(erase, 2000);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    roleElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 50);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(type, 500);
+  }
+}
+
+// Start the typing animation
+type();
+
+
+// 3D Tilt Effect
+VanillaTilt.init(document.querySelector(".profile-img"), {
+  max: 25,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.5
+});
+
+
+
+
+particlesJS("particles", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5, "random": true },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
+    "modes": { "repulse": { "distance": 100, "duration": 0.4 } }
+  },
+  "retina_detect": true
+});
+
+// Scroll Animation
+const sections = document.querySelectorAll('.about-me');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+sections.forEach(section => observer.observe(section));
+
+// Sticky Nav Highlight
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  const scrollSections = document.querySelectorAll('.container, section');
+  scrollSections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    if (href.startsWith('#') && href.substring(1) === current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = document.body.getAttribute("data-page");
+  const aside = document.getElementById("aside");
+
+  if (currentPage === "home") {
+      aside.style.display = "none"; // Hide aside only on the home page
+  }
+});
+
+
+
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+
+
+
+// Set the current year dynamically
+document.getElementById("year").textContent = new Date().getFullYear();
