@@ -76,7 +76,7 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
-/*   box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 a { text-decoration: none; }
@@ -131,7 +131,7 @@ article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
   border-radius: 20px;
-  padding: 15px;
+  padding: 10px;
   box-shadow: var(--shadow-1);
   z-index: 1;
 }
@@ -1644,6 +1644,5 @@ textarea.form-input::-webkit-resizer { display: none; }
     opacity: 0;
   }
 }
-
 
 
