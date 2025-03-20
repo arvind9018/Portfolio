@@ -20,7 +20,7 @@
             background-color: #FFD700;
             color: black;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 16px;
             font-weight: bold;
             border-radius: 5px;
@@ -35,59 +35,73 @@
             transform: translateY(-5px);
         }
 
-        /* Filter container */
+        /* Select category button */
+        .category-button {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .category-button:hover {
+            background-color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dropdown menu */
         .filter-list {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            min-width: 200px;
+            z-index: 10;
+        }
+
+        .filter-list.show {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            flex-direction: column;
         }
 
         .filter-item button {
-            color: #bbb;
+            color: white;
             font-size: 16px;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px;
             transition: 0.3s;
+            width: 100%;
+            text-align: left;
         }
 
         .filter-item button:hover {
-            color: #888;
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-            transform: translateY(-5px);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .filter-item button.active {
             color: #FFD700;
         }
 
-        /* Mobile view: Only show 'All' button first */
+        /* Center dropdown on mobile */
         @media (max-width: 600px) {
             .filter-list {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .filter-list .filter-item:not(:first-child) {
-                display: none;
-            }
-
-            /* Expanded view when clicked */
-            .filter-list.expanded .filter-item {
-                display: block;
-            }
-
-            .filter-list.expanded {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 10px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+                width: 80%;
             }
         }
 
@@ -118,12 +132,17 @@
 </head>
 <body>
 
-    <div class="filter-list" id="filterList">
-        <div class="filter-item"><button class="active" onclick="toggleFilters(); filterProjects('all')">All</button></div>
-        <div class="filter-item"><button onclick="filterProjects('web-design')">Web Design</button></div>
-        <div class="filter-item"><button onclick="filterProjects('applications')">Applications</button></div>
-        <div class="filter-item"><button onclick="filterProjects('web-dev')">Web Development</button></div>
-        <div class="filter-item"><button onclick="filterProjects('data-science')">Data Science</button></div>
+    <div class="filter-container">
+        <button class="category-button" onclick="toggleFilters()">
+            <span id="selectedCategory">Select Category</span> ▼
+        </button>
+        <div class="filter-list" id="filterList">
+            <div class="filter-item"><button class="active" onclick="filterProjects('all', 'All')">All</button></div>
+            <div class="filter-item"><button onclick="filterProjects('web-design', 'Web Design')">Web Design</button></div>
+            <div class="filter-item"><button onclick="filterProjects('applications', 'Applications')">Applications</button></div>
+            <div class="filter-item"><button onclick="filterProjects('web-dev', 'Web Development')">Web Development</button></div>
+            <div class="filter-item"><button onclick="filterProjects('data-science', 'Data Science')">Data Science</button></div>
+        </div>
     </div>
 
     <div class="project-grid">
@@ -167,7 +186,7 @@
     <button class="go-back" onclick="goBack()">← Go Back</button>
 
     <script>
-        function filterProjects(category) {
+        function filterProjects(category, categoryName) {
             const projects = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-item button');
 
@@ -181,21 +200,33 @@
                     project.style.display = 'none';
                 }
             });
+
+            // Update button text
+            document.getElementById("selectedCategory").innerText = categoryName;
+
+            // Close the dropdown after selection
+            document.getElementById("filterList").classList.remove("show");
         }
 
-        document.addEventListener("DOMContentLoaded", () => filterProjects('all'));
+        document.addEventListener("DOMContentLoaded", () => filterProjects('all', 'All'));
 
         function goBack() {
             window.history.back();
         }
 
-        // Toggle filter buttons in mobile view
         function toggleFilters() {
-            const filterList = document.getElementById("filterList");
-            if (window.innerWidth <= 600) {
-                filterList.classList.toggle("expanded");
-            }
+            document.getElementById("filterList").classList.toggle("show");
         }
+
+        // Close dropdown if clicked outside
+        document.addEventListener("click", function(event) {
+            const dropdown = document.getElementById("filterList");
+            const button = document.querySelector(".category-button");
+
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove("show");
+            }
+        });
     </script>
 
 </body>
