@@ -124,7 +124,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Resume download button functionality
 document.getElementById("downloadBtn").addEventListener("click", function() {
-  const pdfUrl = "Arvindresume2.pdf"; // Replace with actual PDF file path
+  const pdfUrl = "General CV .pdf"; // Replace with actual PDF file path
   const link = document.createElement("a");
   link.href = pdfUrl;
   link.download = "Resume.pdf"; // Name of the downloaded file
